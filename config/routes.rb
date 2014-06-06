@@ -1,4 +1,6 @@
 Portfolio::Application.routes.draw do
+  root :to => 'pages#Home'
+  match '/about' => 'pages#About'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
