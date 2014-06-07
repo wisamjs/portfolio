@@ -6,6 +6,14 @@ $color3:#CCDDEE;
 $color4:#667788;
 $color5:#001111;
 
+$circles:("circle1","circle2","circle3");
+$circlesTest:(
+	"1" : (100px,80px),
+	"2" : (250px,1000px),
+	"3"	: (0px,700px)
+
+	);
+
 //Mixins
 //======
 @mixin title($top,$left,$url){
@@ -23,6 +31,25 @@ $color5:#001111;
 	padding: $h $w $h $w;
 	display:inline-block;
 }
+
+@mixin positionCircle($top,$left){
+	fill: $color2;
+	position:absolute;
+	top:$top;
+	left:$left;
+}
+
+@mixin positionInnerCircle($top,$left){
+	@include positionCircle($top+15,$left+15);
+
+}
+
+@mixin positionText($top,$left){
+	color:$color3;
+	@include positionCircle($top+30,$left+30);
+}
+
+
 
 //border-box
 //==========
@@ -98,5 +125,42 @@ nav{
 //Skills
 //=======
 
+.skills{
+	position:relative;
+}
 
+.big-circle{
+	$outerPos1: 300px;
+	$outerPos2: 560px;
+	.outer-circle{
+		width:300px;
+		@include positionCircle($outerPos1, $outerPos2);
+	}
+	.inner-circle{
+		@include positionInnerCircle($outerPos1,$outerPos2);
+	}
 
+	h2{
+		z-index:5;
+		@include positionText($outerPos1+35,$outerPos2+6);
+	}
+}
+
+@each $circle, $keyNumber in $circlesTest {
+	$outerPos1: nth($keyNumber,1);
+	$outerPos2: nth($keyNumber,2);
+
+	.circle#{$circle}{
+		.outer-circle{
+			@include positionCircle($outerPos1, $outerPos2);
+		}
+		.inner-circle{
+			@include positionInnerCircle($outerPos1,$outerPos2);
+		}
+
+		h3{
+			z-index:5;
+			@include positionText($outerPos1,$outerPos2);
+		}
+	}
+}
