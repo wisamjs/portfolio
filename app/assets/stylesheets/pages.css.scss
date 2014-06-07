@@ -6,12 +6,26 @@ $color3:#CCDDEE;
 $color4:#667788;
 $color5:#001111;
 
-$circles:("circle1","circle2","circle3");
-$circlesTest:(
-	"1" : (100px,80px),
-	"2" : (100px,1200px),
-	"3"	: (600px,1200px),
-	"4" : (600px,80px),
+
+$topLeftPos:(100px,80px);
+$topRightPos:(100px,1200px);
+$bottomLeftPos:(600px,1200px);
+$bottomRightPos:(600px,80px);
+
+$circles:(
+	"1" : $topLeftPos,
+	"2" : $topRightPos,
+	"3"	: $bottomLeftPos,
+	"4" : $bottomRightPos,
+	);
+
+$lines:(
+	"1" :(422px,280px,178px,30deg),
+	"2" :(480px,280px,755px,-30deg),
+	"3" :(423px,545px,
+			178px,-30deg),
+	"4" :(480px,545px,
+			755px,30deg),
 
 	);
 
@@ -154,30 +168,22 @@ nav{
 
 	h2{
 		z-index:5;
-		@include positionText($outerPos1+35,$outerPos2+6);
+		@include positionText(335px,566px);
 	}
 
-	.line1{
-		@include createLine(
-			422px,($outerPos1)-20,
-			($outerPos2)-382,30deg);
+	@each $line, $keyNumber in $lines{
+		.line#{$line}{
+			@include createLine(nth($keyNumber,1),
+				nth($keyNumber,2),nth($keyNumber,3),nth($keyNumber,4));
+		}
 	}
 
-	.line2{
-		@include createLine(
-			480px,($outerPos1)-20,
-			($outerPos2)+195,-30deg);
-	}
-
-	.line3{
-		@include createLine(
-			422px,($outerPos1)+20,
-			($outerPos2)-382,-30deg);
-	}
 
 }
+//maxwidth
+//margin auto
 
-@each $circle, $keyNumber in $circlesTest {
+@each $circle, $keyNumber in $circles {
 	$outerPos1: nth($keyNumber,1);
 	$outerPos2: nth($keyNumber,2);
 

@@ -29,7 +29,14 @@ GEM
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
     arel (3.0.3)
+    bitters (0.10.0)
+      bourbon (>= 3.2)
+      sass (>= 3.2)
+      thor
     bootstrap-sass (2.1.0.0)
+    bourbon (4.0.2)
+      sass (~> 3.3)
+      thor
     builder (3.0.4)
     celluloid (0.15.2)
       timers (~> 1.1.0)
@@ -79,6 +86,9 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     multi_json (1.10.1)
+    neat (1.6.0)
+      bourbon (>= 3.1)
+      sass (>= 3.3)
     pg (0.12.2)
     polyglot (0.3.5)
     pry (0.9.12.6)
@@ -153,10 +163,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bitters
   bootstrap-sass (= 2.1)
+  bourbon
   coffee-rails (= 3.2.2)
   guard-livereload
   jquery-rails
+  neat
   pg (= 0.12.2)
   rails (= 3.2.14)
   rb-fsevent

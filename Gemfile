@@ -9,6 +9,7 @@ group :development, :test do
   gem 'rspec-rails', '2.11.0'
   gem 'rb-fsevent'
   gem 'guard-livereload'
+
 end
 
 # Gems used only for assets and not required
@@ -20,7 +21,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'bourbon'
+gem 'bitters'
+gem 'neat'
 group :production do
   gem 'pg', '0.12.2'
 end
