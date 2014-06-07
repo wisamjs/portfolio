@@ -1,10 +1,28 @@
 //Variables
 //=========
-
+$color1:#222233;
+$color2:#445555;
+$color3:#CCDDEE;
+$color4:#667788;
+$color5:#001111;
 
 //Mixins
 //======
+@mixin title($top,$left,$url){
+	position:absolute;
+	top:$top;
+	left:$left;
+	background:url($url) center;
+	padding: 20px 50px 50px 50px;
+	border-radius:10px;
+}
 
+@mixin circle($h,$w){
+	border:1px solid red;
+	border-radius:50%;
+	padding: $h $w $h $w;
+	display:inline-block;
+}
 
 //border-box
 //==========
@@ -64,3 +82,21 @@ nav{
 		padding-left: 5%;
 	}
 }
+
+//About
+//=============
+.about{
+	background:url('noisy-texture2.png') center;
+	padding:5% 10% 5% 10%;
+	position:relative;
+}
+
+.title{
+	@include title(-70px,630px,'noisy-texture2.png')
+}
+
+//Skills
+//=======
+
+
+
