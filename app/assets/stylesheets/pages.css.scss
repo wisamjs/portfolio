@@ -9,10 +9,12 @@ $color5:#001111;
 $circles:("circle1","circle2","circle3");
 $circlesTest:(
 	"1" : (100px,80px),
-	"2" : (250px,1000px),
-	"3"	: (0px,700px)
+	"2" : (100px,1200px),
+	"3"	: (600px,1200px),
+	"4" : (600px,80px),
 
 	);
+
 
 //Mixins
 //======
@@ -47,6 +49,16 @@ $circlesTest:(
 @mixin positionText($top,$left){
 	color:$color3;
 	@include positionCircle($top+30,$left+30);
+}
+
+@mixin createLine($width, $top, $left, $tilt){
+	background:$color2;
+	height:8px;
+	width:$width;
+	border-radius:10px;
+
+	@include positionCircle($top,$left);
+	-webkit-transform:rotate($tilt);
 }
 
 
@@ -144,11 +156,31 @@ nav{
 		z-index:5;
 		@include positionText($outerPos1+35,$outerPos2+6);
 	}
+
+	.line1{
+		@include createLine(
+			422px,($outerPos1)-20,
+			($outerPos2)-382,30deg);
+	}
+
+	.line2{
+		@include createLine(
+			480px,($outerPos1)-20,
+			($outerPos2)+195,-30deg);
+	}
+
+	.line3{
+		@include createLine(
+			422px,($outerPos1)+20,
+			($outerPos2)-382,-30deg);
+	}
+
 }
 
 @each $circle, $keyNumber in $circlesTest {
 	$outerPos1: nth($keyNumber,1);
 	$outerPos2: nth($keyNumber,2);
+
 
 	.circle#{$circle}{
 		.outer-circle{
