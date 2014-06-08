@@ -6,8 +6,7 @@ $color3:#CCDDEE;
 $color4:#667788;
 $color5:#001111;
 
-$circles:("circle1","circle2","circle3");
-$circlesTest:(
+$circles:(
 	"1" : (100px,80px),
 	"2" : (100px,1200px),
 	"3"	: (600px,1200px),
@@ -15,6 +14,36 @@ $circlesTest:(
 
 	);
 
+$lines:(
+	"1" :(422px,280px,178px,30deg),
+	"2" :(480px,280px,755px,-30deg),
+	"3" :(422px,550px,178px,-30deg),
+	"4" :(473px,550px,755px,25deg),
+	);
+
+/*
+	.line1{
+		@include createLine(
+			422px,280px,
+			178px,30deg);
+	}
+
+	.line2{
+		@include createLine(
+			480px,280px,
+			755px,-30deg);
+	}
+
+	.line3{
+		@include createLine(
+			422px,550px,
+			178px,-30deg);
+	}
+	.line4{
+	@include createLine(
+		473px,550px,
+		755px,25deg);
+}*/
 
 //Mixins
 //======
@@ -157,27 +186,18 @@ nav{
 		@include positionText($outerPos1+35,$outerPos2+6);
 	}
 
-	.line1{
-		@include createLine(
-			422px,($outerPos1)-20,
-			($outerPos2)-382,30deg);
-	}
+	@each $line, $keyNumber in $lines{
 
-	.line2{
-		@include createLine(
-			480px,($outerPos1)-20,
-			($outerPos2)+195,-30deg);
+		.line#{$line}{
+			@include createLine(
+				nth($keyNumber,1),nth($keyNumber,2),
+				nth($keyNumber,3),nth($keyNumber,4)
+				);
+		}
 	}
-
-	.line3{
-		@include createLine(
-			422px,($outerPos1)+20,
-			($outerPos2)-382,-30deg);
-	}
-
 }
 
-@each $circle, $keyNumber in $circlesTest {
+@each $circle, $keyNumber in $circles{
 	$outerPos1: nth($keyNumber,1);
 	$outerPos2: nth($keyNumber,2);
 
