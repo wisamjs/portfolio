@@ -6,48 +6,59 @@ $color3:#CCDDEE;
 $color4:#667788;
 $color5:#001111;
 
-$circles:(
-	"1" : (100px,80px),
-	"2" : (100px,1200px),
-	"3"	: (600px,1200px),
-	"4" : (600px,80px),
+$mediumCircles:(
+	"1" : (120px,80px),
+	"2" : (120px,1200px),
+	"3"	: (620px,1200px),
+	"4" : (620px,80px),
+	);
+$smallCircles:(
+	"1" : (260px,80px),
+	"2" : (40px,260px),
+	"3" : (1px,120px),
 
+	"4" : (10px,1290px),
+	"5" : (10px,1150px),
+	"6" : (250px,1112px),
+
+	"7" : (510px,1290px),
+	"8" : (510px,1090px),
+
+	"9"  : (510px,190px),
+	"10" : (400px,120px),
+	"11" : (510px,40px),
 	);
 
-$lines:(
-	"1" :(422px,280px,178px,30deg),
-	"2" :(480px,280px,755px,-30deg),
-	"3" :(422px,550px,178px,-30deg),
-	"4" :(473px,550px,755px,25deg),
+$largeCircle:(340px,560px);
+
+$lines:(//height, width, top, left, tilt
+	"1" :(8px,422px,300px,178px,30deg),
+	"2" :(8px,486px,300px,748px,-29deg),
+	"3" :(8px,410px,580px,184px,-20deg),
+	"4" :(8px,465px,590px,755px,20deg),
+
+	"5" :(4px,16px,251px,128px,95deg),
+	"6" :(4px,79px,140px,198px,150deg),
+	"7" :(4px,20px,113px,149px,100deg),
+
+	"8" :(4px,31px,121px,1298px,-63deg),
+	"9" :(4px,24px,125px,1210px,60deg),
+	"10" :(4px,43px,244px,1190px,-50deg),
 	);
-
-/*
-	.line1{
-		@include createLine(
-			422px,280px,
-			178px,30deg);
-	}
-
-	.line2{
-		@include createLine(
-			480px,280px,
-			755px,-30deg);
-	}
-
-	.line3{
-		@include createLine(
-			422px,550px,
-			178px,-30deg);
-	}
-	.line4{
-	@include createLine(
-		473px,550px,
-		755px,25deg);
-}*/
 
 //Mixins
 //======
-@mixin title($top,$left,$url){
+
+
+@mixin title($top,$left){
+	position:absolute;
+	top:$top;
+	left:$left;
+	padding: 20px 50px 50px 50px;
+	border-radius:10px;
+}
+
+@mixin titleUrl($top,$left,$url){
 	position:absolute;
 	top:$top;
 	left:$left;
@@ -56,18 +67,21 @@ $lines:(
 	border-radius:10px;
 }
 
-@mixin circle($h,$w){
-	border:1px solid red;
-	border-radius:50%;
-	padding: $h $w $h $w;
-	display:inline-block;
-}
+
 
 @mixin positionCircle($top,$left){
-	fill: $color2;
+	fill: $color3;
 	position:absolute;
 	top:$top;
 	left:$left;
+}
+
+@mixin positionSmallCircle($top,$left){
+	@include positionInnerCircle($top - 08,$left - 7.5);
+}
+
+@mixin positionMedCircle($top,$left){
+	@include positionInnerCircle($top - 6,$left - 6);
 }
 
 @mixin positionInnerCircle($top,$left){
@@ -76,13 +90,13 @@ $lines:(
 }
 
 @mixin positionText($top,$left){
-	color:$color3;
+	color:$color2;
 	@include positionCircle($top+30,$left+30);
 }
 
-@mixin createLine($width, $top, $left, $tilt){
-	background:$color2;
-	height:8px;
+@mixin createLine($height,$width, $top, $left, $tilt){
+	background:$color3;
+	height:$height;
 	width:$width;
 	border-radius:10px;
 
@@ -157,33 +171,42 @@ nav{
 	background:url('noisy-texture2.png') center;
 	padding:5% 10% 5% 10%;
 	position:relative;
+
+	.titleUrl{
+		@include titleUrl(-70px,630px,'noisy-texture2.png')
+	}
 }
 
-.title{
-	@include title(-70px,630px,'noisy-texture2.png')
-}
+
 
 //Skills
 //=======
 
 .skills{
 	position:relative;
+	height:850px;
+	background:$color4;
+	margin:0;
+	padding:1px;
+
+	.title{
+		@include title(-70px,630px);
+		background:$color4;
+	}
 }
 
 .big-circle{
-	$outerPos1: 300px;
-	$outerPos2: 560px;
 	.outer-circle{
 		width:300px;
-		@include positionCircle($outerPos1, $outerPos2);
+		@include positionCircle(nth($largeCircle,1), nth($largeCircle,2));
 	}
 	.inner-circle{
-		@include positionInnerCircle($outerPos1,$outerPos2);
+		@include positionInnerCircle(nth($largeCircle,1),nth($largeCircle,2));
 	}
 
 	h2{
 		z-index:5;
-		@include positionText($outerPos1+35,$outerPos2+6);
+		@include positionText(nth($largeCircle,1)+35,nth($largeCircle,2)+6);
 	}
 
 	@each $line, $keyNumber in $lines{
@@ -191,23 +214,24 @@ nav{
 		.line#{$line}{
 			@include createLine(
 				nth($keyNumber,1),nth($keyNumber,2),
-				nth($keyNumber,3),nth($keyNumber,4)
+				nth($keyNumber,3),nth($keyNumber,4),
+				nth($keyNumber,5)
 				);
 		}
 	}
 }
 
-@each $circle, $keyNumber in $circles{
+@each $circle, $keyNumber in $mediumCircles{
 	$outerPos1: nth($keyNumber,1);
 	$outerPos2: nth($keyNumber,2);
 
 
-	.circle#{$circle}{
+	.med-circle#{$circle}{
 		.outer-circle{
 			@include positionCircle($outerPos1, $outerPos2);
 		}
 		.inner-circle{
-			@include positionInnerCircle($outerPos1,$outerPos2);
+			@include positionMedCircle($outerPos1,$outerPos2);
 		}
 
 		h3{
@@ -215,4 +239,34 @@ nav{
 			@include positionText($outerPos1,$outerPos2);
 		}
 	}
+}
+
+@each $circle, $keyNumber in $smallCircles{
+	$outerPos1: nth($keyNumber,1);
+	$outerPos2: nth($keyNumber,2);
+
+
+	.small-circle#{$circle}{
+		.outer-circle{
+			@include positionCircle($outerPos1, $outerPos2);
+		}
+		.inner-circle{
+			@include positionSmallCircle($outerPos1,$outerPos2);
+		}
+
+		h3{
+			z-index:5;
+			@include positionText($outerPos1 - 9,$outerPos2 - 8);
+		}
+	}
+}
+
+//Portfolio
+//=======
+.portfolio{
+	position:relative;
+	background:url('noisy-texture2.png');
+	padding:1px;
+
+
 }
