@@ -1,14 +1,38 @@
 
 
-<div class="about">
-<h3 class="titleUrl">About</h3>
+<div class="about clearfix">
 	<!-- Paragraph about self being human -->
+	<!-- consider adding book currently reading, music currently into -->
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, magnam nesciunt cupiditate quam facilis! Quisquam, aspernatur, quis beatae accusamus maxime placeat cupiditate cumque odit similique repellat et blanditiis eligendi enim.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, natus facere impedit voluptates hic iusto sint fugiat. Ratione, molestias, vel consequuntur error id similique fuga eaque cupiditate fugiat dolorem dicta?</p>
+
+	<ul>
+	<li>
+		<%=render 'layouts/music-icon'%>
+		<h3>Current favourite song:<span class="item-title">Jefferson Starship-Jane</span></h3>
+	</li>
+		<li>
+			<%=render 'layouts/hand-icon'%>
+			<h3>Lefty</h3>
+		</li>
+		<li>
+			<%= link_to image_tag("left-guitar.png", alt: "onePageWebsite", :class=>'icon')%>
+			<h3>Guitar player</h3>
+			</li>
+		<li>
+			<%=render 'layouts/dog-icon'%>
+			<h3>Dog Lover</h3>
+		</li>
+		<li>
+			<%=render 'layouts/book-icon'%>
+			<h3>Currently reading: <span class="item-title">Yes is the Answer</span></h3>
+		</li>
+
+
+	</ul>
 </div>
 
 <!-- Skills section -->
 	<div class="skills">
-	<h3 class="title">Skill</h3>
 	<ul>
 		<li class="big-circle">
 			<h2>I wear many hats</h2>
@@ -100,95 +124,96 @@
 </div>
 
 <!-- Portfolio Section -->
-<div class="portfolio">
+<div class="portfolio clearfix">
 <div class="title">Portfolio</div>
 <ul>
-		<li>
-			<h3>One Page Website</h3>
-			<img src="http://placehold.it/400x300" alt="">
-			<ul class="tags">
-				<li>HTML</li>
-				<li>CSS</li>
-			</ul>
+		<li class="item">
+			<%= link_to image_tag("spinThatTrack.png", alt: "onePageWebsite", :class=>'screen-shot'), 'http://wisamzaghal.herokuapp.com'%>
+			<div class="info">
+				<h3>One Page Website</h3>
+				<ul class="tags">
+					<li>HTML</li>
+					<li>CSS</li>
+				</ul>
+			</div>
 		</li>
-		<li>
-			<h3>Movie Word Replacer</h3>
-			<img src="http://placehold.it/400x300" alt="">
-			<ul class="tags">
-				<li>HTML</li>
-				<li>CSS</li>
-				<li>JavaScript</li>
-				<li>Yeoman</li>
-				<li>Grunt</li>
-				<li>Bower</li>
-			</ul>
+		<li class="item">
+			<%= link_to image_tag("spinThatTrack.png", alt: "onePageWebsite", :class=>'screen-shot'), 'http://wisamzaghal.herokuapp.com'%>
+			<div class="info">
+				<h3>Movie Word Replacer</h3>
+				<ul class="tags">
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>JavaScript</li>
+					<li>Yeoman</li>
+					<li>Grunt</li>
+					<li>Bower</li>
+				</ul>
+			</div>
 		</li>
-		<li>
-			<h3>Album Player</h3>
-			<img src="http://placehold.it/400x300" alt="">
-			<ul class="tags">
-				<li>HTML</li>
-				<li>CSS</li>
-				<li>JavaScript</li>
-				<li>Yeoman</li>
-				<li>Grunt</li>
-				<li>Bower</li>
-			</ul>
+		<li class="item">
+			<%= link_to image_tag("spinThatTrack.png", alt: "onePageWebsite", :class=>'screen-shot'), 'http://wisamzaghal.herokuapp.com'%>
+			<div class="info">
+				<h3>Album Player</h3>
+				<ul class="tags">
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>JavaScript</li>
+					<li>Yeoman</li>
+					<li>Grunt</li>
+					<li>Bower</li>
+				</ul>
+			</div>
 		</li>
-		<li>
-			<h3>API Forms</h3>
-			<img src="http://placehold.it/400x300" alt="">
-			<ul class="tags">
-				<li>NodeJs</li>
-				<li>Express</li>
-				<li>MongoDB</li>
-			</ul>
+		<li class="item">
+			<%= link_to image_tag("spinThatTrack.png", alt: "onePageWebsite", :class=>'screen-shot'), 'http://wisamzaghal.herokuapp.com'%>
+			<div class="info">
+				<h3>API Forms</h3>
+				<ul class="tags">
+					<li>NodeJs</li>
+					<li>Express</li>
+					<li>MongoDB</li>
+				</ul>
+			</div>
 		</li>
-		<li>
-			<h3>Music Quiz</h3>
-			<img src="http://placehold.it/400x300" alt="">
-			<ul class="tags">
-				<li>HTML</li>
-				<li>CSS</li>
-				<li>JavaScript</li>
-				<li>Yeoman</li>
-				<li>Grunt</li>
-				<li>Bower</li>
-			</ul>
+		<li class="item">
+			<%= link_to image_tag("spinThatTrack.png", alt: "onePageWebsite", :class=>'screen-shot'), 'http://wisamzaghal.herokuapp.com'%>
+			<div class="info">
+				<h3>API Forms</h3>
+				<ul class="tags">
+					<li>HTML</li>
+					<li>SASS</li>
+					<li>JavaScript</li>
+					<li>Yeoman</li>
+					<li>Grunt</li>
+					<li>Bower</li>
+				</ul>
+			</div>
 		</li>
-		<li>
-			<h3>Billboard Project</h3>
-			<img src="http://placehold.it/400x300" alt="">
-			<ul class="tags">
-				<li>Python</li>
-			</ul>
+		<li class="item">
+			<%= link_to image_tag("spinThatTrack.png", alt: "onePageWebsite", :class=>'screen-shot'), 'http://wisamzaghal.herokuapp.com'%>
+			<div class="info">
+				<h3>Billboard Project</h3>
+				<ul class="tags">
+					<li>Python</li>
+				</ul>
+			</div>
 		</li>
 	</ul>
 </div>
+<button>Resume</button>
 
 <!-- Mentor/ Competitions -->
-<ul>
-	<li>
-		<h3>thing</h3>
-		<p></p>
-		<img src="" alt="">
-	</li>
-	<li>
-		<h3>thing</h3>
-		<p></p>
-		<img src="" alt="">
-	</li>
-	<li>
-		<h3>thing</h3>
-		<p></p>
-		<img src="" alt="">
-	</li>
-	<li>
-		<h3>thing</h3>
-		<p></p>
-		<img src="" alt="">
-	</li>
-</ul>
+<div class="other-work clearfix">
+	<ul>
+		<li>Startup Weekend Toronto Maker Edition</li>
+		<li>Startup Weekend Toronto Tech for Good</li>
+		<li>Competed in BattleHack</li>
+		<li>Ladies Learning Code Mentor</li>
+
+		<li>Link to next Meetup</li>
+	</ul>
+</div>
 
 <!-- Contact -->
 

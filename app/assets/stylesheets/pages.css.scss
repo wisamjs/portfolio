@@ -1,6 +1,6 @@
 //Variables
 //=========
-$color1:#222233;
+$color1:#575D69;
 $color2:#445555;
 $color3:#CCDDEE;
 $color4:#667788;
@@ -125,9 +125,14 @@ $lines:(//height, width, top, left, tilt
 
 //General
 //======
+h1{
+	font-size:56px;
+}
 body{
+	overflow-x:hidden;
 	margin: 0 auto;
 	padding:0 auto;
+	font-family: 'Open Sans', sans-serif;
 }
 
 ul{
@@ -144,8 +149,12 @@ a{
 //========
 
 header{
-	background:url('waves.jpg') center no-repeat;
+	//background:url('waves.jpg') center no-repeat;
+	background:url('IMG_5549.jpg') center no-repeat;
+	//background:url('ZedProMedia_Latte_Macbook.jpg') center no-repeat;
 	background-size: cover;
+	padding-bottom:15%;
+	position:relative;
 }
 
 .cover{
@@ -153,27 +162,77 @@ header{
 	text-align:center;
 }
 
+.heading{
+	//background: rgba(200, 54, 54, 0.5);
+	border:2px solid white;
+	margin:10% 25% 0 25%;
+	background: rgba(0,0,0,0.6);
+	padding-bottom:2.5%;
+	color:white;
+}
+
+.down-arrow{
+	position:absolute;
+	top:80%;
+	left:49%;
+	fill:$color3;
+}
+
 /*Navigation
 ============*/
 nav{
-	background:black;
+	background:$color1;
 	color: white;
+	position:fixed;
+	z-index:100;
+	width:100%;
 
 	ul li{
 		float:left;
-		padding-left: 5%;
+		padding: 1% 5% 1% 0%;
+		width:16.6666666667%;
+	}
+	ul{
+		float:right;
+		width:40%;
+	}
+
+	.active a{
+		border-bottom:2px solid white;
+		margin-bottom:5px;
 	}
 }
 
 //About
 //=============
 .about{
+	color:$color2;
 	background:url('noisy-texture2.png') center;
-	padding:5% 10% 5% 10%;
+	padding:5% 20% 5% 20%;
 	position:relative;
 
 	.titleUrl{
 		@include titleUrl(-70px,630px,'noisy-texture2.png')
+	}
+
+	ul{
+		margin-top:5%;
+
+	}
+
+	li{
+		float:left;
+		width:20%;
+		text-align:center;
+		fill:#b2b2b2;
+	}
+	
+	.item-title{
+		display:block;
+	}
+
+	img{
+		height:100px;
 	}
 }
 
@@ -184,7 +243,8 @@ nav{
 
 .skills{
 	position:relative;
-	height:850px;
+	height:750px;
+	width:100%;
 	background:$color4;
 	margin:0;
 	padding:1px;
@@ -264,9 +324,48 @@ nav{
 //Portfolio
 //=======
 .portfolio{
+
+	img{
+		width:400px;
+		height:auto;
+		border:1px solid #DFDFDF;
+	}
 	position:relative;
-	background:url('noisy-texture2.png');
+	background:#FFF;
 	padding:1px;
+	padding: 1px 5% 1px 5%;
 
+	li.item{
+		float:left;
+		width:33.33333333%;
 
+	}
+
+	.info{
+		margin:0;
+		margin-top:-22px;
+		background:#DFDFDF;
+		margin-right:6.4%;
+		padding-bottom:9%;
+		margin-bottom:5%;
+		text-align:center;
+		.tags li{
+			display:inline-block;
+		}
+	}
+
+}
+
+//Other-work
+//==========
+.other-work ul li{
+	background:$color1;
+	color:$color3;
+}
+
+//footer
+//======
+footer ul li{
+	float:left;
+	width:16.6666666667%;
 }
