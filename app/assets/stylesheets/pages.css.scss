@@ -7,43 +7,51 @@ $color4:#667788;
 $color5:#001111;
 
 $mediumCircles:(
-	"1" : (120px,80px),
-	"2" : (120px,1200px),
-	"3"	: (620px,1200px),
-	"4" : (620px,80px),
+	"1" : (120px,400px),
+	"2" : (120px,900px),
+	"3"	: (620px,900px),
+	"4" : (620px,400px),
 	);
 $smallCircles:(
-	"1" : (260px,80px),
-	"2" : (40px,260px),
-	"3" : (1px,120px),
+	"1" : (260px,400px),
+	"2" : (40px,580px),
+	"3" : (1px,440px),
 
-	"4" : (10px,1290px),
-	"5" : (10px,1150px),
-	"6" : (250px,1112px),
+	"4" : (10px,1000px),
+	"5" : (10px,850px),
+	"6" : (250px,1012px),
 
-	"7" : (510px,1290px),
-	"8" : (510px,1090px),
+	"7" : (510px,1090px),
+	"8" : (460px,890px),
 
-	"9"  : (510px,190px),
-	"10" : (400px,120px),
-	"11" : (510px,40px),
+	"9"  : (470px,390px),
+	"10" : (460px,220px),
+	"11" : (580px,240px),
 	);
 
 $largeCircle:(340px,560px);
 
 $lines:(//height, width, top, left, tilt
-	"1" :(8px,422px,300px,178px,30deg),
-	"2" :(8px,486px,300px,748px,-29deg),
-	"3" :(8px,410px,580px,184px,-20deg),
-	"4" :(8px,465px,590px,755px,20deg),
+	"1" :(8px,175px,291px,478px,50deg),
+	"2" :(8px,223px,300px,729px,138deg),
+	"3" :(8px,144px,582px,480px,-47deg),
+	"4" :(8px,199px,582px,740px,40deg),
 
-	"5" :(4px,16px,251px,128px,95deg),
-	"6" :(4px,79px,140px,198px,150deg),
-	"7" :(4px,20px,113px,149px,100deg),
+	"5" :(4px,16px,251px,440px,95deg),
+	"6" :(4px,79px,140px,518px,150deg),
+	"7" :(4px,20px,113px,469px,100deg),
 
-	"8" :(4px,31px,121px,1298px,-63deg),
-	"9" :(4px,24px,125px,1210px,60deg),
-	"10" :(4px,43px,244px,1190px,-50deg),
+	"8" :(4px,35px,121px,998px,-63deg),
+	"9" :(4px,20px,123px,913px,60deg),
+	"10" :(4px,43px,244px,998px,46deg),
+
+	"11" :(4px,58px,594px,921px,83deg),
+	"12" :(4px,101px,614px,1006px,143deg),
+	
+	"13" :(4px,47px,598px,430px,83deg),
+	"14" :(4px,146px,582px,301px,48deg),
+	"15" :(4px,70px,676px,338px,24deg),
+
 	);
 
 //Mixins
@@ -99,9 +107,24 @@ $lines:(//height, width, top, left, tilt
 	height:$height;
 	width:$width;
 	border-radius:10px;
+	
+	
 
 	@include positionCircle($top,$left);
 	-webkit-transform:rotate($tilt);
+}
+
+@mixin animateLine($num,$width){
+
+	@-webkit-keyframes sanimate#{$num}{
+		0% {
+			width:1px;
+
+		}
+		100% {
+			width:$width;
+		}
+	}
 }
 
 
@@ -226,7 +249,6 @@ nav{
 		text-align:center;
 		fill:#b2b2b2;
 	}
-	
 	.item-title{
 		display:block;
 	}
@@ -277,6 +299,7 @@ nav{
 				nth($keyNumber,3),nth($keyNumber,4),
 				nth($keyNumber,5)
 				);
+			-webkit-animation:sanimate#{$line} 2s 1;
 		}
 	}
 }
@@ -319,6 +342,11 @@ nav{
 			@include positionText($outerPos1 - 9,$outerPos2 - 8);
 		}
 	}
+}
+
+//line-animation
+@each $line, $keyNumber in $lines{
+	@include animateLine($line,nth($keyNumber,2));
 }
 
 //Portfolio
@@ -369,3 +397,10 @@ footer ul li{
 	float:left;
 	width:16.6666666667%;
 }
+
+
+
+//Responsive
+//====
+
+//-webkit-transform: scale(0.8)
