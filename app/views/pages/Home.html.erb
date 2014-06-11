@@ -1,40 +1,44 @@
 
 
-<div id = "about" class="about clearfix">
-	<!-- Paragraph about self being human -->
-	<p>Hello! I'm an ambitious developer who's passionate about problem-solving and startups. I have 2 years of experience as an application developer, and I'm currently adding more tools to my toolkit at HackerYou. In my spare time, I love to play guitar, get involved in local meetups and explore the lovely cuisine this great city has to offer.</p>
+<div id ="about" class="about clearfix">
+	<h2>About</h2>
+	<%= image_tag("wisam-edit.jpg", :alt => "headshot", :class => "headshot") %>
+	<div class="about-info">
+		<!-- Paragraph about self being human -->
+		<p>Hello! I'm a developer who's passionate about problem-solving and startups. I have 2 years of experience as an application developer, and I'm currently adding more tools to my toolkit at HackerYou. In my spare time, I love to play guitar, get involved in local meetups and explore the lovely cuisine this great city has to offer.</p>
 
-	<ul>
-	<li>
-		<%=render 'layouts/music-icon'%>
-		<h3>Current favourite song:<span class="item-title">Jefferson Starship-Jane</span></h3>
-	</li>
+		<ul>
 		<li>
-			<%= link_to image_tag("hand.png", alt: "onePageWebsite", :class=>'icon')%>
-			<h3>Lefty</h3>
+			<%=render 'layouts/music-icon'%>
+			<h3>Classic Rock</h3>
 		</li>
-		<li>
-			<%= link_to image_tag("left-guitar.png", alt: "onePageWebsite", :class=>'icon')%>
-			<h3>Guitar player</h3>
+			<li>
+				<%= link_to image_tag("hand.png", alt: "onePageWebsite", :class=>'icon')%>
+				<h3>Lefty</h3>
 			</li>
-		<li>
-			<%=render 'layouts/dog-icon'%>
-			<h3>Dog Lover</h3>
-		</li>
-		<li>
-			<%=render 'layouts/book-icon'%>
-			<h3>Currently reading: <span class="item-title">Yes is the Answer</span></h3>
-		</li>
+			<li>
+				<%= link_to image_tag("left-guitar.png", alt: "onePageWebsite", :class=>'icon')%>
+				<h3>Guitar player</h3>
+				</li>
+			<li>
+				<%=render 'layouts/dog-icon'%>
+				<h3>Dog Lover</h3>
+			</li>
+			<li>
+				<%=render 'layouts/book-icon'%>
+				<h3>Book reader</h3>
+			</li>
 
 
-	</ul>
+		</ul>
+	</div>
 </div>
 
 <!-- Skills section -->
 	<div id="skills" class="skills">
 	<ul>
 		<li class="big-circle">
-			<h2>I wear many hats</h2>
+			<h2>Skills</h2>
 			<%=render 'layouts/svgLarge' %>
 			<div class="line1"></div>
 			<div class="line2"></div>
@@ -96,7 +100,7 @@
 							<div class="line12"></div>
 						</li>
 						<li class="small-circle8">
-							<h3>Microsoft SQL Server</h3>
+							<h3>SQL</h3>
 							<%=render 'layouts/svgSmall' %>
 							<div class="line13"></div>
 						</li>
@@ -131,9 +135,9 @@
 
 <!-- Portfolio Section -->
 <div id="portfolio" class="portfolio clearfix">
-<div class="title">Portfolio</div>
-<ul>
-		<li class="item">
+<h2>Portfolio</h2>
+<ul class="clearfix">
+		<!--<li class="item">
 			<%= link_to image_tag("spinThatTrack.png", alt: "onePageWebsite", :class=>'screen-shot'), 'http://wisamzaghal.herokuapp.com'%>
 			<div class="info">
 				<h3>One Page Website</h3>
@@ -142,8 +146,8 @@
 					<li>CSS</li>
 				</ul>
 			</div>
-		</li>
-		<li class="item">
+		</li> -->
+		<!--<li class="item">
 			<%= link_to image_tag("spinThatTrack.png", alt: "onePageWebsite", :class=>'screen-shot'), 'http://wisamzaghal.herokuapp.com'%>
 			<div class="info">
 				<h3>Movie Word Replacer</h3>
@@ -156,9 +160,9 @@
 					<li>Bower</li>
 				</ul>
 			</div>
-		</li>
+		</li> -->
 		<li class="item">
-			<%= link_to image_tag("spinThatTrack.png", alt: "onePageWebsite", :class=>'screen-shot'), 'http://wisamzaghal.herokuapp.com'%>
+			<%= link_to image_tag("musalicious.png", alt: "onePageWebsite", :class=>'screen-shot'), 'http://wzaghal.github.io/musicQuiz'%>
 			<div class="info">
 				<h3>Album Player</h3>
 				<ul class="tags">
@@ -172,7 +176,7 @@
 			</div>
 		</li>
 		<li class="item">
-			<%= link_to image_tag("spinThatTrack.png", alt: "onePageWebsite", :class=>'screen-shot'), 'http://wisamzaghal.herokuapp.com'%>
+			<%= link_to image_tag("titleReplacer.png", alt: "onePageWebsite", :class=>'screen-shot'), 'http://wzaghal.github.io/movieWordReplacer'%>
 			<div class="info">
 				<h3>API Forms</h3>
 				<ul class="tags">
@@ -183,7 +187,7 @@
 			</div>
 		</li>
 		<li class="item">
-			<%= link_to image_tag("spinThatTrack.png", alt: "onePageWebsite", :class=>'screen-shot'), 'http://wisamzaghal.herokuapp.com'%>
+			<%= link_to image_tag("spinThatTrackTitle.png", alt: "onePageWebsite", :class=>'screen-shot'), 'http://www.mmcfadyen.ca/spinThatTrack/'%>
 			<div class="info">
 				<h3>API Forms</h3>
 				<ul class="tags">
@@ -196,7 +200,7 @@
 				</ul>
 			</div>
 		</li>
-		<li class="item">
+		<!--<li class="item">
 			<%= link_to image_tag("spinThatTrack.png", alt: "onePageWebsite", :class=>'screen-shot'), 'http://wisamzaghal.herokuapp.com'%>
 			<div class="info">
 				<h3>Billboard Project</h3>
@@ -204,24 +208,24 @@
 					<li>Python</li>
 				</ul>
 			</div>
-		</li>
+		</li>-->
 	</ul>
 </div>
-<button>Resume</button>
+<!--<button>Resume</button>-->
 
 <!-- Mentor/ Competitions -->
 <div id="other-work clearfix" class="other-work clearfix">
 	<ul>
-		<li><%= link_to image_tag("swto.png", alt: "onePageWebsite", :class=>'icon')%>
+		<li>
+			<%= image_tag("swto.png", :alt => "swto", :class => "swto") %>
 		</li>
-		<li><%= link_to image_tag("battlehack.png", alt: "onePageWebsite", :class=>'icon')%></li>
-		<li><%= link_to image_tag("llcode.png", alt: "onePageWebsite", :class=>'icon')%></li>
-		<li><%= link_to image_tag("meetup.png", alt: "onePageWebsite", :class=>'icon')%></li>
+		<li><%= image_tag("battlehack.png", :alt => "swto", :class => "swto") %></li>
+		<li><%= image_tag("llcode.png", :alt => "swto", :class => "swto") %></li>
+		<li><%= image_tag("meetup.png", :alt => "swto", :class => "swto") %></li>
 
 	</ul>
 </div>
 
-<!-- Contact -->
 
 
 

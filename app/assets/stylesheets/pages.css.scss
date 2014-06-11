@@ -1,3 +1,4 @@
+
 //Variables
 //=========
 $color1:#575D69;
@@ -152,7 +153,27 @@ $lines:(//height, width, top, left, tilt
 //General
 //======
 h1{
-	font-size:56px;
+	font-family: 'Alegreya', serif;
+    font-weight: 700;
+    line-height: 46px;
+    font-size: 46px;
+    margin: 0 0 43px 0;
+}
+h2{
+	font-family: 'Roboto Condensed', sans-serif;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 23px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 23px 0;
+}
+p{
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 23px;
+    margin: 0 0 23px 0;
 }
 body{
 	overflow-x:hidden;
@@ -185,7 +206,7 @@ header{
 }
 
 .cover{
-	padding: 10%;
+	padding: 13%;
 	text-align:center;
 }
 
@@ -194,7 +215,7 @@ header{
 	border:2px solid white;
 	margin:10% 25% 0 25%;
 	background: rgba(0,0,0,0.6);
-	padding-bottom:2.5%;
+	padding:2.5%;
 	color:white;
 }
 
@@ -240,7 +261,7 @@ nav{
 .about{
 	color:$color2;
 	background:url('noisy-texture2.png') center;
-	padding:5% 20% 5% 20%;
+	padding:5% 10% 5% 10%;
 	position:relative;
 
 	.titleUrl{
@@ -261,6 +282,18 @@ nav{
 	}
 	.item-title{
 		display:block;
+	}
+
+	.headshot{
+		height:auto;
+		float:left;
+		width:25%;
+		padding-top:1%;
+		padding-right:2%;
+	}
+	.about-info{
+		float:left;
+		width:75%;
 	}
 
 	img{
@@ -298,7 +331,7 @@ nav{
 
 	h2{
 		z-index:5;
-		@include positionText(nth($largeCircle,1)+35,nth($largeCircle,2)+6);
+		@include positionText(nth($largeCircle,1)+75,nth($largeCircle,2)+46);
 	}
 
 	@each $line, $keyNumber in $lines{
@@ -362,6 +395,11 @@ nav{
 //Portfolio
 //=======
 .portfolio{
+		background:url('noisy-texture2.png') center;
+		
+		h2{
+			padding-top:2%;
+		}
 
 	img{
 		width:400px;
@@ -369,9 +407,8 @@ nav{
 		border:1px solid #DFDFDF;
 	}
 	position:relative;
-	background:#FFF;
-	padding:1px;
-	padding: 1px 5% 1px 5%;
+	
+	padding: 3% 5% 1px 5%;
 
 	li.item{
 		float:left;
@@ -396,24 +433,53 @@ nav{
 
 //Other-work
 //==========
-.other-work ul li{
-	float:left;
-	padding: 0 10% 0 10%;
-	width:60%;
+.other-work{
+	ul{
+		padding: 0 12% 0 12%;
+	}
+
+	li{
+		display:inline-block;
+		//padding: 0 10% 0 10%;
+		width:26%;
+	}
+
+	li:nth-child(3){
+		width:10%;
+	}
+
 	img{
 		padding:0;
-		width:35%;
+		width:100%;
 
+	}
+
+	li:nth-child(4){
+		width:15%;
 	}
 }
 
 //footer
 //======
-footer ul li{
-	float:left;
-	width:16.6666666667%;
-}
+footer{
+	background: $color1;
 
+	h2{
+		color:#FFF;
+		padding-top:4%;
+		text-align:center;
+	}
+	ul{
+		padding: 3% 35% 3% 35%;
+	}
+	li{
+		float:left;
+		width:25%;
+	}
+	i{
+		color:#FFF;
+	}
+}
 
 //Responsive
 //====
