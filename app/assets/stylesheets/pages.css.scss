@@ -57,7 +57,10 @@ $lines:(//height, width, top, left, tilt
 //Mixins
 //======
 
+@mixin fillColor($color){
+	fill:$color;
 
+}
 @mixin title($top,$left){
 	position:absolute;
 	top:$top;
@@ -78,7 +81,7 @@ $lines:(//height, width, top, left, tilt
 
 
 @mixin positionCircle($top,$left){
-	fill: $color3;
+	@include fillColor($color3);
 	position:absolute;
 	top:$top;
 	left:$left;
@@ -177,7 +180,7 @@ header{
 	//background:url('ZedProMedia_Latte_Macbook.jpg') center no-repeat;
 	background-size: cover;
 	padding-top:1px;
-	padding-bottom:15%;
+	padding-bottom:3%;
 	position:relative;
 }
 
@@ -197,9 +200,9 @@ header{
 
 .down-arrow{
 	position:absolute;
-	top:80%;
-	left:49%;
-	fill:$color3;
+	top:89%;
+	left:48%;
+	@include fillColor(#FFF);
 }
 
 /*Navigation
@@ -253,7 +256,8 @@ nav{
 		float:left;
 		width:20%;
 		text-align:center;
-		fill:#b2b2b2;
+		@include fillColor(#b2b2b2);
+		
 	}
 	.item-title{
 		display:block;
@@ -393,8 +397,14 @@ nav{
 //Other-work
 //==========
 .other-work ul li{
-	background:$color1;
-	color:$color3;
+	float:left;
+	padding: 0 10% 0 10%;
+	width:60%;
+	img{
+		padding:0;
+		width:35%;
+
+	}
 }
 
 //footer
@@ -403,7 +413,6 @@ footer ul li{
 	float:left;
 	width:16.6666666667%;
 }
-
 
 
 //Responsive
