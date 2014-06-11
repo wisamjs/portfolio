@@ -439,13 +439,14 @@ nav{
 //==========
 .other-work{
 	ul{
-		padding: 0 12% 0 12%;
+		padding: 0 0% 0 32%;
 	}
 
 	li{
 		display:inline-block;
 		//padding: 0 10% 0 10%;
-		width:26%;
+		width:20%;
+		text-align:center;
 	}
 
 	li:nth-child(3){
@@ -453,7 +454,6 @@ nav{
 	}
 
 	img{
-		padding:0;
 		width:100%;
 
 	}
