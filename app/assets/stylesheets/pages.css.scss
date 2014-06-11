@@ -347,6 +347,8 @@ nav{
 	}
 }
 
+
+
 @each $circle, $keyNumber in $mediumCircles{
 	$outerPos1: nth($keyNumber,1);
 	$outerPos2: nth($keyNumber,2);
@@ -367,6 +369,8 @@ nav{
 	}
 }
 
+
+
 @each $circle, $keyNumber in $smallCircles{
 	$outerPos1: nth($keyNumber,1);
 	$outerPos2: nth($keyNumber,2);
@@ -382,6 +386,8 @@ nav{
 
 		h3{
 			z-index:5;
+			font-weight:300;
+			font-size:15px;
 			@include positionText($outerPos1 - 9,$outerPos2 - 8);
 		}
 	}
@@ -396,7 +402,6 @@ nav{
 //=======
 .portfolio{
 		background:url('noisy-texture2.png') center;
-		
 		h2{
 			padding-top:2%;
 		}
@@ -407,7 +412,6 @@ nav{
 		border:1px solid #DFDFDF;
 	}
 	position:relative;
-	
 	padding: 3% 5% 1px 5%;
 
 	li.item{
