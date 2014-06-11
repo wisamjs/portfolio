@@ -176,6 +176,7 @@ header{
 	background:url('IMG_5549.jpg') center no-repeat;
 	//background:url('ZedProMedia_Latte_Macbook.jpg') center no-repeat;
 	background-size: cover;
+	padding-top:1px;
 	padding-bottom:15%;
 	position:relative;
 }
@@ -203,16 +204,20 @@ header{
 
 /*Navigation
 ============*/
+.sticky nav{
+		background:$color1;
+		margin-top:0px;
+	}
 nav{
-	background:$color1;
 	color: white;
-	position:fixed;
 	z-index:100;
 	width:100%;
+	margin-top:15px;
+	//box-shadow: 0 1px 2px 0 rgba(0,0,0,0.075);
 
 	ul li{
 		float:left;
-		padding: 1% 5% 1% 0%;
+		padding: 0% 5% 1% 0%;
 		width:16.6666666667%;
 	}
 	ul{
@@ -224,6 +229,7 @@ nav{
 		border-bottom:2px solid white;
 		margin-bottom:5px;
 	}
+
 }
 
 //About
