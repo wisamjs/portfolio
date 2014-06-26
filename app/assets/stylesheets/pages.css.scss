@@ -111,8 +111,7 @@ $lines:(//height, width, top, left, tilt
 	height:$height;
 	width:$width;
 	border-radius:10px;
-	
-	
+
 
 	@include positionCircle($top,$left);
 	-webkit-transform:rotate($tilt);
