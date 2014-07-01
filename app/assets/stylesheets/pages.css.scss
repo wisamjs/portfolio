@@ -152,20 +152,25 @@ $lines:(//height, width, top, left, tilt
 //General
 //======
 h1{
-	font-family: 'Alegreya', serif;
-    font-weight: 700;
-    line-height: 46px;
-    font-size: 46px;
-    margin: 0 0 43px 0;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+    font-size: 110px;
+    color:#FFF;
+    text-transform:uppercase;
+    text-shadow: 1px 1px 1px #000;
+    margin: 0 0 0px 0;
+	background: rgba(34, 61, 49,0.1);
 }
 h2{
 	font-family: 'Roboto Condensed', sans-serif;
     font-weight: normal;
     font-size: 21px;
-    line-height: 23px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    padding-top:6px;
     margin: 0 0 23px 0;
+    text-shadow: 1px 1px 1px #FFF;
+	background: rgba(34, 61, 49,0.09);
 }
 p{
 
@@ -176,7 +181,7 @@ p{
 }
 body{
 	overflow-x:hidden;
-	margin: 0 auto;
+	margin: 0;
 	padding:0 auto;
 	font-family: 'Open Sans', sans-serif;
 }
@@ -186,7 +191,11 @@ ul{
 	padding:0;
 }
 
+
 a{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size:15px;
 	text-decoration: none;
 	color: inherit;
 }
@@ -195,28 +204,31 @@ a{
 //========
 
 header{
+	 background:
+    linear-gradient(
+      rgba(67, 121, 96, 0.40),
+      rgba(67, 121, 96, 0.40)
+    ),url(('IMG_5549.jpg'));
 	//background:url('waves.jpg') center no-repeat;
-	background:url('IMG_5549.jpg') center no-repeat;
+	//background:url('IMG_5549.jpg') center no-repeat;
 	//background:url('ZedProMedia_Latte_Macbook.jpg') center no-repeat;
 	background-size: cover;
-	padding-top:1px;
-	padding-bottom:3%;
+	background-position: 50% 50%;
+	padding:1% 0 0% 0;
 	position:relative;
 }
 
 .cover{
-	padding: 13%;
+	padding: 15% 0 24% 0;
 	text-align:center;
 }
 
 .heading{
-	//background: rgba(200, 54, 54, 0.5);
-	border:2px solid white;
-	margin:10% 25% 0 25%;
-	background: rgba(0,0,0,0.6);
-	padding:2.5%;
-	color:white;
+	width:100%;
+	margin:0;
+	//background: rgba(34, 61, 49,0.1);
 }
+
 
 .down-arrow{
 	position:absolute;
@@ -228,31 +240,34 @@ header{
 /*Navigation
 ============*/
 .sticky nav{
-		background:$color1;
-		margin-top:0px;
 	}
-nav{
-	color: white;
-	z-index:100;
-	width:100%;
-	margin-top:15px;
-	//box-shadow: 0 1px 2px 0 rgba(0,0,0,0.075);
 
-	ul li{
-		float:left;
-		padding: 0% 5% 1% 0%;
-		width:16.6666666667%;
+nav{
+	z-index:100;
+	position:fixed;
+
+	width:100%;
+
+	li{
+		color: #FFF;
+		display:inline-block;
+		padding: 0 1% 0 1%;
+		text-shadow: 1px 1px 1px #000;
+	}
+
+	li:hover{
+		color:rgba(27, 165, 123, 1);
 	}
 	ul{
-		float:right;
-		width:40%;
+		text-align:right;
+		margin-right:5%;
 	}
 
-	//.active a{
-	//	border-bottom:2px solid white;
-	//	margin-bottom:5px;
-	//}
 
+}
+
+.active{
+	color:rgba(27, 165, 123, 1);
 }
 
 //About
