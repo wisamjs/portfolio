@@ -1,0 +1,59 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* Floating fix*/
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 110px;
+  color: #FFF;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px #000;
+  margin: 0 0 0px 0; }
+
+h2 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: normal;
+  font-size: 21px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-top: 6px;
+  margin: 0 0 23px 0;
+  text-shadow: 1px 1px 1px #FFF; }
+
+body {
+  margin: 0;
+  padding: 0 auto;
+  font-family: 'Open Sans', sans-serif; }
+
+header {
+  background: linear-gradient(rgba(67, 121, 96, 0.4), rgba(67, 121, 96, 0.4)), url('../images/IMG_5549.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+  padding: 256px 0 337px 0;
+  text-align: center; }
+  header h1 {
+    background: rgba(34, 61, 49, 0.1); }
+  header h2 {
+    background: rgba(34, 61, 49, 0.09); }
+
+.heading {
+  width: 100%;
+  margin: 0; }
+
+.down-arrow {
+  position: absolute;
+  top: 89%;
+  left: 0;
+  right: 0;
+  fill: #FFF; }
