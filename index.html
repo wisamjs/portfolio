@@ -2,37 +2,15 @@
 <html>
 <head>
   <title>Portfolio</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= stylesheet_link_tag 'http:////cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css', :media => 'screen' %>
-  <%= javascript_include_tag "application" %>
-  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' %>
-    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,900' %>
-  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' %>
+
+  <link rel="stylesheet" href="http:////cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
+
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,900">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic">
   <link href="http://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Alegreya:700" rel="stylesheet" type="text/css" />
-  <%= csrf_meta_tags %>
+    <link href="styles/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<header>
-		<%= render 'layouts/nav' %>
-		<%= render 'layouts/cover' %>
-	</header>
-		<%= yield %>
-		<%= render 'layouts/footer' %>
-	<script>
-		$(function() {
-			$('a[href*=#]:not([href=#])').click(function() {
-				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      				var target = $(this.hash);
-				    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-				    if (target.length) {
-				    	$('html,body').animate({
-				        scrollTop: target.offset().top
-				        }, 1000);
-				        return false;
-				    }
-				}
-			});
-		});
-</script>
 </body>
 </html>
