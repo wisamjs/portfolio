@@ -63,6 +63,21 @@ body{
 	font-family: 'Open Sans', sans-serif;
 }
 
+ul{
+	margin:100px 0 0 0;
+	padding: 0;
+	list-style: none;
+}
+li{
+	display:inline-block;
+	padding: 0px 5px 0 5px;
+}
+a{
+	outline : none;
+	color: #FFF;
+	    text-shadow: 1px 1px 1px #000;
+}
+
 
 //Header
 //========
@@ -78,7 +93,7 @@ header{
 
 	position:relative;
 
-	padding: 256px 0 337px 0;
+	padding: 256px 0 212px 0;
 	text-align:center;
 	h1{
 		background: rgba(34, 61, 49,0.1);
