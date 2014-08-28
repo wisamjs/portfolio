@@ -142,10 +142,10 @@ header {
   header {
     padding: 305px 0 255px 0; } }
 
-@media all and (max-width: 311px) {
+@media all and (max-width: 320px) {
   h1 {
     font-size: 35px; }
   h2 {
     font-size: 12px; }
   header {
-    padding: 309px 0 259px 0; } }
+    padding: 209px 0 148px 0; } }

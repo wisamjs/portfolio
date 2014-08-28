@@ -192,10 +192,13 @@ header{
 	}
 }
 
-@media all and (max-width:311px){
+//quick fix for iphone
+//note to self, find a better
+//way to do this.
+@media all and (max-width:320px){
 	@include decreaseHeadingSize(35px,12px);
 	header{
-		padding: 309px 0 259px 0;
+		padding: 209px 0 148px 0;
 	}
 
 }
