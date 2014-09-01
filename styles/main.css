@@ -26,13 +26,16 @@ h2 {
   font-size: 21px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  padding-top: 6px;
+  margin-top: 6px;
   margin: 0 0 23px 0;
   text-shadow: 1px 1px 1px #FFF; }
 
 body {
+  background: linear-gradient(rgba(67, 121, 96, 0.4), rgba(67, 121, 96, 0.4)), url('../images/IMG_55493.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
   margin: 0;
-  padding: 0 auto;
+  padding: 0;
   font-family: 'Open Sans', sans-serif; }
 
 ul {
@@ -50,11 +53,7 @@ a {
   text-shadow: 1px 1px 1px #000; }
 
 header {
-  background: linear-gradient(rgba(67, 121, 96, 0.4), rgba(67, 121, 96, 0.4)), url('../images/IMG_55493.jpg');
-  background-size: cover;
-  background-position: 50% 50%;
-  position: relative;
-  padding: 256px 0 212px 0;
+  margin: 256px 0 212px 0;
   text-align: center; }
   header h1 {
     background: rgba(34, 61, 49, 0.1); }
@@ -78,7 +77,7 @@ header {
   h2 {
     font-size: 19px; }
   header {
-    padding: 268px 0 226px 0; } }
+    margin: 268px 0 226px 0; } }
 
 @media all and (max-width: 950px) {
   h1 {
@@ -86,7 +85,7 @@ header {
   h2 {
     font-size: 17px; }
   header {
-    padding: 278px 0 230px 0; } }
+    margin: 278px 0 230px 0; } }
 
 @media all and (max-width: 900px) {
   h1 {
@@ -100,7 +99,7 @@ header {
   h2 {
     font-size: 17px; }
   header {
-    padding: 280px 0 233px 0; } }
+    margin: 280px 0 233px 0; } }
 
 @media all and (max-width: 800px) {
   h1 {
@@ -108,7 +107,7 @@ header {
   h2 {
     font-size: 16px; }
   header {
-    padding: 286px 0 236px 0; } }
+    margin: 286px 0 236px 0; } }
 
 @media all and (max-width: 700px) {
   h1 {
@@ -116,7 +115,7 @@ header {
   h2 {
     font-size: 15px; }
   header {
-    padding: 289px 0 240px 0; } }
+    margin: 289px 0 240px 0; } }
 
 @media all and (max-width: 550px) {
   h1 {
@@ -124,7 +123,7 @@ header {
   h2 {
     font-size: 14px; }
   header {
-    padding: 295px 0 246px 0; } }
+    margin: 295px 0 246px 0; } }
 
 @media all and (max-width: 450px) {
   h1 {
@@ -132,7 +131,7 @@ header {
   h2 {
     font-size: 13.5px; }
   header {
-    padding: 297px 0 250px 0; } }
+    margin: 297px 0 250px 0; } }
 
 @media all and (max-width: 387px) {
   h1 {
@@ -140,7 +139,7 @@ header {
   h2 {
     font-size: 13px; }
   header {
-    padding: 305px 0 255px 0; } }
+    margin: 305px 0 255px 0; } }
 
 @media all and (max-width: 320px) {
   h1 {
@@ -148,4 +147,4 @@ header {
   h2 {
     font-size: 12px; }
   header {
-    padding: 209px 0 148px 0; } }
+    margin: 209px 0 148px 0; } }
