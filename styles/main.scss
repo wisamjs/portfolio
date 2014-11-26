@@ -66,14 +66,6 @@ h2{
 }
 
 body{
-	// overflow-x:hidden;
-	background:
-    linear-gradient(
-      rgba(67, 121, 96, 0.40),
-      rgba(67, 121, 96, 0.40)
-    ),url(('../images/IMG_55493.jpg'));
-	background-position: 50% 50%;
-	background-size: cover;
 	margin: 0;
 	padding:0;
 	font-family: 'Open Sans', sans-serif;
@@ -106,8 +98,16 @@ a{
 
 header{
 
-
-	margin: 256px 0 212px 0;
+	background:
+    linear-gradient(
+      rgba(67, 121, 96, 0.40),
+      rgba(67, 121, 96, 0.40)
+    ),url('../images/IMG_55493.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	// margin: 256px 0 212px 0;
+	padding: 238px 0 238px 0;
 	text-align:center;
 	h1{
 		background: rgba(34, 61, 49,0.1);
@@ -119,8 +119,7 @@ header{
 }
 
 .heading{
-	width:100%;
-	margin:0;
+
 }
 
 
@@ -136,7 +135,7 @@ header{
 @media all and (max-width:1000px){
 	@include decreaseHeadingSize(90px,19px);
 	header{
-		margin: 268px 0 226px 0;
+		// margin: 268px 0 226px 0;
 	}
 }
 
@@ -144,7 +143,7 @@ header{
 @media all and (max-width:950px){
 	@include decreaseHeadingSize(85px,17px);
 	header{
-		margin: 278px 0 230px 0;
+		// margin: 278px 0 230px 0;
 	}
 }
 
@@ -156,28 +155,28 @@ header{
 @media all and (max-width:850px){
 	@include decreaseHeadingSize(75px,17px);
 	header{
-		margin: 280px 0 233px 0;
+		// margin: 280px 0 233px 0;
 	}
 }
 
 @media all and (max-width:800px){
 	@include decreaseHeadingSize(70px,16px);
 	header{
-		margin: 286px 0 236px 0;
+		// margin: 286px 0 236px 0;
 	}
 }
 
 @media all and (max-width:700px){
 	@include decreaseHeadingSize(65px,15px);
 	header{
-		margin: 289px 0 240px 0;
+		// margin: 289px 0 240px 0;
 	}
 }
 
 @media all and (max-width:550px){
 	@include decreaseHeadingSize(55px,14px);
 	header{
-		margin: 295px 0 246px 0;
+		// margin: 295px 0 246px 0;
 	}
 
 }
@@ -185,7 +184,7 @@ header{
 @media all and (max-width:450px){
 	@include decreaseHeadingSize(50px,13.5px);
 	header{
-		margin: 297px 0 250px 0;
+		// margin: 297px 0 250px 0;
 	}
 
 }
@@ -193,7 +192,7 @@ header{
 @media all and (max-width:387px){
 	@include decreaseHeadingSize(40px,13px);
 	header{
-		margin: 305px 0 255px 0;
+		// margin: 305px 0 255px 0;
 	}
 }
 
@@ -203,7 +202,7 @@ header{
 @media all and (max-width:320px){
 	@include decreaseHeadingSize(35px,12px);
 	header{
-		margin: 209px 0 148px 0;
+		// margin: 209px 0 148px 0;
 	}
 
 }
